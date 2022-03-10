@@ -1,0 +1,49 @@
+/* Hiệu ứng cho CSS */
+
+@keyframes pushBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growthBottomRight {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes smallhBottomRight {
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+
+/* Tablet: width >=740px and width < 1024px */
+
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+
+
+/* Mobile: width >=740px and width < 1024px */
+
+@media only screen and(max-width: 46.1875em) {}

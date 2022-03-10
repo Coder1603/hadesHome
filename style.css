@@ -1,0 +1,658 @@
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Quicksand", sans-serif;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+
+/* START HEADER */
+
+.container-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 66px;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.header {
+    display: flex;
+    max-width: 1440px;
+    height: 66px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.header__logo {
+    flex: 1;
+}
+
+.header__logo--size {
+    width: 150px;
+}
+
+.header__sidebar {
+    display: flex;
+    flex: 5;
+    justify-content: space-between;
+}
+
+.header__sidebar--alike {
+    display: flex;
+    list-style: none;
+}
+
+.header__sidebar-left {
+    flex: 8;
+}
+
+.header__sidebar-right {
+    flex: 4;
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    margin-right: -20px;
+}
+
+.header__sidebar-left--title {
+    text-decoration: none;
+    color: #272727;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.margin-20px {
+    margin-right: 20px;
+}
+
+
+/* END HEADER */
+
+
+/* START SLIDER */
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider__img {
+    display: flex;
+    transition: transform 0.2s ease;
+}
+
+.slider--size-img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.slider-nextback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-nextback {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.slider-nextback--style {
+    width: 80px;
+    height: 80px;
+    background: rgb(246 244 243);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.5s;
+}
+
+.slider-nextback--style:hover {
+    background: rgb(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.fa-arrow-left {
+    font-size: 20px;
+}
+
+.fa-arrow-right {
+    font-size: 20px;
+}
+
+.slider-nextback__back::after {
+    position: absolute;
+    right: calc(50% - 1px);
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    width: 2px;
+    height: 50px;
+    background-color: #E0E0E0;
+    text-align: center;
+}
+
+
+/* END SLIDER */
+
+
+/* START MAIN */
+
+.main {
+    max-width: 1440px;
+    margin: 0 auto 50px auto;
+}
+
+.main__text {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.main__text-title {
+    padding-bottom: 10px;
+    line-height: 1.6;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.main__text-title--style {
+    color: #212b36;
+    text-decoration: none;
+}
+
+.main__text-content {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.main__text-content--style {
+    color: #333;
+    text-decoration: none;
+}
+
+.main__shop-container {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main__shop-product {
+    width: 330px;
+    height: 440px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.main__shop-img--style {
+    width: 100%;
+    height: 440px;
+    cursor: pointer;
+}
+
+.main__shop-imgfront {
+    animation: fadeIn 0.4s ease;
+}
+
+.main__shop-imgback {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.main__shop-info {
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.main__shop-name--style {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: #272727;
+}
+
+.main__shop-price {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.main__shop-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.main__shop-buynow {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__shop-buynow-style {
+    width: 160px;
+    height: 36px;
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    display: none;
+    animation: pushBottom 0.5s ease;
+}
+
+.main__shop-product:hover .main__shop-buynow-style {
+    display: flex;
+}
+
+.main__shop-product:hover .main__shop-imgfront {
+    display: none;
+}
+
+.main__shop-product:hover .main__shop-imgback {
+    display: flex;
+}
+
+
+/* END MAIN */
+
+
+/* START CONTENT */
+
+.content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.content__posts-main {
+    max-width: 465px;
+    margin-bottom: 50px;
+    margin-right: 15px;
+}
+
+.content__posts-title {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.content__posts-title-text--link {
+    text-decoration: none;
+    color: #272727;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.content__posts-main__img-link--style {
+    width: 465px;
+}
+
+.content__posts-main__time {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem;
+    line-height: 1.6em;
+    color: #5d5d60;
+    padding: 15px 0;
+}
+
+.content__posts-main__title {
+    padding: 0 0 15px 0;
+}
+
+.content__posts-main__title-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-style: normal;
+    color: #212b36;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.content__posts-container {
+    display: flex;
+}
+
+.content__posts-main__content {
+    font-size: 1.4rem;
+    color: #5d5d60;
+    line-height: 1.4;
+    padding: 0 0 15px 0;
+}
+
+.content__posts-main__more {
+    position: relative;
+}
+
+.content__posts-main__more-link {
+    color: #272727;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: all 0.1s ease;
+}
+
+.content__posts-main__more-link:hover {
+    border-bottom: 2px solid black;
+}
+
+.content__videodemo {
+    margin-bottom: 40px;
+    width: 100%
+}
+
+.content__videodemo-style {
+    width: 100%;
+}
+
+
+/* END CONTENT */
+
+
+/* START FOOTER */
+
+.footer {
+    display: flex;
+    margin: 0 auto 30px auto;
+    max-width: 1440px;
+}
+
+.footer__container {
+    width: 25%;
+}
+
+.footer__container-title {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-style: normal;
+    color: #212b36;
+    cursor: default;
+}
+
+.footer__container-content {
+    line-height: 2.2;
+    color: #5d5d60;
+    font-size: 1.2rem;
+}
+
+.footer__container-content-syle {
+    list-style: ' - ';
+}
+
+.footer__container-content-link {
+    text-decoration: none;
+    line-height: 2.2;
+    color: #5d5d60;
+}
+
+.fab.fa-facebook-square,
+.fab.fa-instagram-square {
+    font-size: 2.8rem;
+    padding-right: 4px;
+}
+
+.footer__container-content-img-style {
+    margin-top: 10px;
+    width: 150px;
+}
+
+
+/* END FOOTER */
+
+
+/* START MESSENGER */
+
+.messenger {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.messenger-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(10, 124, 255);
+}
+
+.posittion-g {
+    transform: translate(10px, 10px);
+}
+
+.messenger__container {
+    width: 375px;
+    height: auto;
+    position: absolute;
+    background-color: #FFFFFF;
+    bottom: 120%;
+    right: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 32px 24px;
+    cursor: default;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
+    transform-origin: bottom right;
+}
+
+.messenger__container-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.messenger__container-header-logo-style {
+    width: 48px;
+}
+
+.messenger__container-header-logo {
+    cursor: pointer;
+}
+
+.messenger__container-header-option {
+    display: flex;
+}
+
+.messenger__container-header-option-user {
+    display: flex;
+    width: 52px;
+    height: 32px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+}
+
+.messenger__container-header-option-user-style {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.fa-angle-down {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.messenger__container-header-option-alike {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+.dash {
+    width: 50%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 30%;
+}
+
+.messenger__container-header-option-hover:hover {
+    cursor: pointer;
+    background-color: #d1d0d0;
+}
+
+.messenger__container-main-hello-title {
+    font-size: 2rem;
+    color: #000;
+    font-weight: 600;
+    line-height: 24px;
+    cursor: text;
+}
+
+.messenger__container-main-hello-wait {
+    color: rgba(0, 0, 0, .5);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 4px 0 0 0;
+    cursor: text;
+}
+
+.messenger__container-main-hello-inf {
+    color: #000;
+    font-size: 1.5rem;
+    line-height: 20px;
+    margin-top: 24px;
+    word-wrap: normal;
+    cursor: text;
+}
+
+.messenger__container-main-login {
+    margin: 24px 0;
+}
+
+.messenger__container-main-login-alike {
+    width: 100%;
+    padding: 12px 0px;
+    border-radius: 8px;
+    font-size: 1.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.messenger__container-main-login-acc {
+    background-color: #0A7CFF;
+    color: #ffff;
+    margin-bottom: 12px;
+}
+
+.messenger__container-main-login-acc:hover {
+    background-color: #0872ec;
+}
+
+.messenger__container-main-login-guest {
+    background-color: #F2F2F2;
+    color: #000;
+}
+
+.messenger__container-main-login-guest:hover {
+    background-color: #e9e6e6;
+}
+
+.messenger__container-main-login-alike span {
+    position: relative;
+    margin-left: 20%;
+}
+
+.fa-facebook-messenger {
+    position: absolute;
+    right: 102%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.messenger__container-footer {
+    color: rgba(0, 0, 0, .5);
+    font-size: 1.3rem;
+    line-height: 18px;
+    text-align: center;
+    cursor: text;
+}
+
+.messenger__container-footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+.messenger__container-header-option-change {
+    position: absolute;
+    top: 20%;
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: 12px;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 8px;
+    width: 96%;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.messenger__container-header-option-link {
+    width: 100%;
+    text-decoration: none;
+    color: #333;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+}
+
+.messenger__container-header-option-link:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+
+/* .messenger__container-header-option-avt {
+    display: none;
+} */
+
+
+/* .messenger__container-header-option-more {
+    display: none;
+} */
+
+
+/* END MESSENGER */
